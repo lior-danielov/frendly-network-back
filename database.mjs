@@ -23,3 +23,4 @@ try {
 export const db = client.db("facebook");
 export const userCollection = db.collection("users");
 export const postCollection = db.collection("posts");
+export const registerCollection = db.collection("registers");
