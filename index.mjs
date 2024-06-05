@@ -1,6 +1,7 @@
 import express, { json } from "express";
 import Posts from "./routes/posts.mjs";
 import Users from "./routes/users.mjs";
+import Registers from "./routes/registers.mjs";
 import cors from "cors";
 import { db } from "./database.mjs";
 const app = express();
@@ -19,6 +20,10 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+app.use("/registers", Registers);
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send(err.message);
